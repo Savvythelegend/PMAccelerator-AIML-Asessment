@@ -2,14 +2,16 @@
 
 from db import supabase
 from datetime import datetime
-
 TABLE = "weather_requests"
-
 # CREATE
 def create_request(data: dict) -> dict:
-    res = supabase.table(TABLE).insert(data).execute()
-    return res.data[0] if res.data else {"error": "Failed to create"}
-
+    try:
+        result = supabase.table(TABLE).insert(data).execute()
+        return result.data[0] if result.data else {"error": "No data returned from insert"}
+    except Exception as e:
+        print(f"Database error: {e}")  # Debug print
+        return {"error": str(e)}
+    
 # READ ALL
 def get_requests(filters: dict = None):
     query = supabase.table(TABLE)

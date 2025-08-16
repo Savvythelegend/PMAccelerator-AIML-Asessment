@@ -1,13 +1,6 @@
 # weather_client_async.py
-import os
 import httpx
-from dotenv import load_dotenv
 from datetime import datetime, timedelta
-
-load_dotenv()
-API_KEY = os.getenv("API_KEY")
-if not API_KEY:
-    raise ValueError("API_KEY not set in .env file")
 
 class AsyncWeatherClient:
     """Async client for WeatherAPI.com"""
@@ -24,7 +17,7 @@ class AsyncWeatherClient:
         start_date: str = None,
         end_date: str = None,
         aqi: str = "no"
-    ) -> dict:
+    ) -> list:
         """
         Fetch current weather data asynchronously.
         If start_date and end_date are provided, fetch weather for each date in the range.
@@ -38,10 +31,16 @@ class AsyncWeatherClient:
             BASE_HISTORY = "http://api.weatherapi.com/v1/history.json"
             results = []
             async with httpx.AsyncClient() as client:
+                # start = datetime.strptime(start_date, "%Y-%m-%d")
+                # Ensure start_date and end_date are strings
+                if not isinstance(start_date, str):
+                    start_date = start_date.strftime("%Y-%m-%d")
+                if not isinstance(end_date, str):
+                    end_date = end_date.strftime("%Y-%m-%d")
                 start = datetime.strptime(start_date, "%Y-%m-%d")
                 end = datetime.strptime(end_date, "%Y-%m-%d")
-                delta = timedelta(days=1)
                 current = start
+                delta = timedelta (days=1)
                 while current <= end:
                     params = {
                         "key": self.api_key,
