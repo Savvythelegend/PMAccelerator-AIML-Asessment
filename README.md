@@ -131,7 +131,9 @@ Example Request:
 
 ## Demo Video
 
-[View Demo Video](Insert your demo video link here)
+1. [CLI APP ](https://drive.google.com/file/d/1wYv0sK-yv3qHY8NH4SMNhUmGbavpLnYR/view?usp=drive_link)
+
+2. [Backend Weather API](https://drive.google.com/file/d/1qCDP7KMUQCz11XoYwd7K3Dho4R0OhfvL/view?usp=sharing)
 
 The demo video showcases:
 - CLI App usage and features
