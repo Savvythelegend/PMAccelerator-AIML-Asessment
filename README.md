@@ -179,6 +179,6 @@ This project is created as part of the PM Accelerator technical assessment and i
 ## 🙏 Acknowledgments
 - Weather data provided by WeatherAPI.com
 - FastAPI framework
-- SQLAlchemy ORM
+- Supabase Baas Postgres
 - Python community
 - PM Accelerator team for the opportunity
