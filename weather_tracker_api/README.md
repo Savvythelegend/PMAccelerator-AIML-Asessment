@@ -4,13 +4,14 @@ A FastAPI-based weather tracking application that allows users to fetch and stor
 
 ## Features
 
-- 🌤️ Weather forecast retrieval using WeatherAPI.com
-- 📊 Historical weather data storage and retrieval
-- 👤 User-based request tracking
-- 🔍 Date range validation
-- 📱 Responsive web interface
-- 🚀 RESTful API endpoints
-- 📝 SQLite database for data persistence
+- Weather forecast retrieval using WeatherAPI.com
+- Historical weather data storage and retrieval
+- User-based request tracking
+- Date range validation
+- Responsive web interface
+- RESTful API endpoints
+- Supabase PostgreSQL database integration
+- Row Level Security (RLS) for data access control
 
 ## Project Structure
 
@@ -19,7 +20,7 @@ weather-app/
 ├─ src/
 │  ├─ main.py                # FastAPI app, routes
 │  ├─ models.py              # Pydantic request/response models
-│  ├─ db.py                  # SQLAlchemy session
+│  ├─ db.py                  # Supabase client and database config
 │  ├─ repositories.py        # CRUD functions
 │  ├─ weather_client.py      # Weather API calls
 │  ├─ services.py           # Business logic
@@ -35,6 +36,8 @@ weather-app/
 
 - Python 3.8 or higher
 - WeatherAPI.com API key
+- Supabase account and project
+- Supabase project URL and API key
 
 ## Installation
 
@@ -59,7 +62,11 @@ weather-app/
    ```bash
    cp .env.example .env
    ```
-   Edit .env and add your WeatherAPI.com API key
+   Edit .env and add your:
+   - WeatherAPI.com API key
+   - Supabase Project URL
+   - Supabase API key
+   - Other configuration variables as needed
 
 ## Running the Application
 
